@@ -1,182 +1,237 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">JOBHUB</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Category</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Account
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="#">profile</a></li>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">JOBHUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Category</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Dashboard</a></li>
+              <li><a class="dropdown-item" href="#">profile</a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
 
 
-                </ul>
-                <div class="d-flex">
-                    <button type="button" class="btn btn-outline-success   mx-2">Login</button>
-                    <button type="button" class="btn btn-outline-danger  mx-2">Signup</button>
-                </div>
-
-            </div>
+        </ul>
+        <div class="d-flex">
+          <button type="button" class="btn btn-outline-success   mx-2">Login</button>
+          <button type="button" class="btn btn-outline-danger  mx-2">Signup</button>
         </div>
-    </nav>
 
-    <div class="container">
-        <form class="row g-3">
-            <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
-              <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Middle Name</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Last Name</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-            <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-            <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Re-Enter Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-3">
-                <label for="inputPassword4" class="form-label">Date of Birth</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-3">
-                <label for="inputState" class="form-label">Identity</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <label for="inputPassword4" class="form-label">ID Number</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-3">
-                <label id="Gender" class="form-label">Gender</label>
-                <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineRadioOptions" value="option1">
-                    <label class="form-check-label" for="Gender">Male</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineRadioOptions" value="option2">
-                    <label class="form-check-label" for="Gender">Female</label>
-                  </div>
-                </div>
-                  
-              </div>
-              
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Education</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Cource</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">Feild Of intrest</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-          </form>
+      </div>
     </div>
-    
+  </nav>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <div class="container">
+    <form class="row g-3" method="post" action="index.php">
+      <div class="col-md-4">
+        <label for="first-name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first-name" name="fName">
+      </div>
+      <div class="col-md-4">
+        <label for="middle-name" class="form-label">Middle Name</label>
+        <input type="text" class="form-control" id="middle-name" name="mName">
+      </div>
+      <div class="col-md-4">
+        <label for="last-name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last-name" name="lName">
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label" >Email</label>
+        <input type="email" class="form-control" id="inputEmail4" name="email">
+      </div>
+      <div class="col-md-4">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="password">
+      </div>
+      <div class="col-md-4">
+        <label for="inputPassword4" class="form-label">Re-Enter Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="cnfPassword">
+      </div>
+      <div class="col-md-3">
+        <label for="date" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="date" name="DOB">
+      </div>
+      <div class="col-md-3">
+        <label for="ID" class="form-label">Identity</label>
+        <select id="ID" class="form-select" name="ID">
+          <option selected>Choose...</option>
+          <option value="Aadhar Card">Aadhar Card</option>
+          <option value="PAN Card">PAN Card</option>
+          <option value="Driving Licence">Driving Licence</option>
+          <option value="Voter ID">Voter ID</option>
+          <option value="Passport">Passport</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="idNumber" class="form-label">ID Number</label>
+        <input type="text" class="form-control" id="idNumber" name="idNumber">
+      </div>
+      <div class="col-md-3">
+        <label id="Gender" class="form-label">Gender</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineRadioOptions" value="Male" required name="Gender">
+            <label class="form-check-label" for="Gender">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="inlineRadioOptions" value="Female" required name="Gender">
+            <label class="form-check-label" for="Gender">Female</label>
+          </div>
+        </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      </div>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+      <div class="col-md-4">
+        <label for="education" class="form-label">Education</label>
+        <select id="education" class="form-select" name="education">
+          <option selected>Choose...</option>
+          <option value="Higher Secondary">Higher Secondary</option>
+          <option value="Greduate">Greduate</option>
+          <option value="Post Greduate">Post Greduate</option>
+          <option value="Senior secondary">Senior secondary</option>
+          <option value="Diploma">Diploma</option>
+          <option value="Compitive Exam(For CA,CS only)">Compitive Exam(For CA,CS only)</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="cource" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" name="cource" placeholder="Btech,BSc,Bcom,Msc etc">
+      </div>
+      <div class="col-md-4">
+        <label for="intrest" class="form-label">Feild Of intrest</label>
+        <select id="intrest" class="form-select" name="intrest">
+          <option selected>Choose...</option>
+          <option value="IT">IT</option>
+          <option value="Call Center">Call Center</option>
+          <option value="Educator">Educator</option>
+          <option value="Manegement">Manegement</option>
+          <option value="Software eng.">Software eng.</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Core Eng.(Civil,mechenical,Electrical)">Core Eng.(Civil,mechenical,Electrical)</option>
+          <option value="Accountant">Accountant</option>
+          
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" name="city">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select" name="state">
+          <option selected>Choose...</option>
+          
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+            <option value="Daman and Diu">Daman and Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" name="zip">
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
