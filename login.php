@@ -128,10 +128,11 @@
            {
              if(req.responseText=="0")
              {
-               document.getElementById('r').style.display='block';
+              document.getElementById('r').style.display='block';
              }
              else{
-               location.href="http://localhost/JOB-PORTAL/company.php";
+              location.href = req.responseText;
+              
              }
              
            }

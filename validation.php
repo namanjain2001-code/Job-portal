@@ -1,4 +1,5 @@
 <?php
+session_start();
 $lgntype = $_GET['lgntype'];
 $email = $_GET['email'];
 $pass = $_GET['pass'];
@@ -20,8 +21,9 @@ if($num==0)
     echo "0";
 }
 else
-{
-    header("Location: http://localhost/JOB-PORTAL/".$lgntype.".php");
+{   
+    $_SESSION['email'] = $email;
+    echo "http://localhost/JOB-PORTAL/".$lgntype.".php";
 }
 }
 ?>
