@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $lgntype = $_GET['lgntype'];
 $email = $_GET['email'];
 $pass = $_GET['pass'];

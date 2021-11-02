@@ -8,12 +8,16 @@ $result = mysqli_query($con, $q);
 $num = mysqli_num_rows($result);
 
 
-$p = "select  jobs.pos, candidate.firstName, candidate.lastName, candidate.middleName
+$p = "select  jobs.pos, jobapplication.status,jobapplication.applicationNum, candidate.firstName, candidate.lastName, candidate.middleName
 from jobapplication
 inner join jobs ON jobapplication.Job_id=jobs.id
 inner join candidate ON jobapplication.Semail=candidate.email
 WHERE jobs.Cemail = '$email'";
 $res = mysqli_query($con,$p);
+if(!$res)
+{
+  echo mysqli_error($con);
+}
 
 
   $no = mysqli_num_rows($res);
@@ -134,6 +138,7 @@ $res = mysqli_query($con,$p);
           <th scope="col">SKILL REQUIRED</th>
           <th scope="col">CTC(in LPA)</th>
           <th scope="col">Discription</th>
+          <th scope="col">STATUS</th>
         </tr>
       </thead>
       <tbody>
@@ -146,6 +151,7 @@ $res = mysqli_query($con,$p);
             <td><?php echo $row['skill']; ?></td>
             <td><?php echo $row['CTC']; ?></td>
             <td><?php echo $row['dcrip']; ?></td>
+            
           </tr>
           <tr>
           <?php
@@ -177,6 +183,21 @@ $res = mysqli_query($con,$p);
             <td><?php echo $ro['pos']; ?></td>
             <td><?php echo "---"; ?></td>
             
+            <td>
+              <?php
+              if($ro['status']=='NOT Accepted')
+              {
+                ?><button onclick="Accept(this.id)" id="<?php echo $ro['applicationNum'];?>" type="button" class="btn btn-outline-primary">Accept</button>
+              <?php  
+              }
+              else
+              {?>
+                <button type="button" disabled class="btn btn-success">Accepted</button>
+                <?php
+              }  
+              ?>
+            </td>
+            
           </tr>
           <tr>
           <?php
@@ -189,6 +210,29 @@ $res = mysqli_query($con,$p);
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script>
+    function Accept(id)
+    {
+      const re = new XMLHttpRequest();
+
+re.open("get", "http://localhost/JOB-PORTAL/Accept.php?appNum="+id,true);
+re.send();
+re.onreadystatechange = function() {
+  if (re.readyState == 4 && re.status == 200) {
+    if (re.responseText == "0") {
+      alert("error: Please enter valid input"+re.responseText);
+    } else {
+
+      alert("Sucess: succesfully Accepted"+re.responseText);
+      document.getElementById(id).className="btn btn-success btn-lg";
+            document.getElementById(id).disabled=true;
+            document.getElementById(id).innerText="Accepted";
+           
+  }
+}
+    }
+  }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
