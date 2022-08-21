@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <?php
     $fName=$_POST['fName'];
     $mName=$_POST['mName'];
@@ -20,9 +21,11 @@
     $con=mysqli_connect('localhost','root');
     if(!$con)
     echo "connection failed";
-    else {
-     echo "sucessfull";
-     echo "$Gender";
+    else {?>
+    <div class="alert alert-success" role="alert">
+     Your account created successfully <a href="login.php" class="alert-link">click here</a>. to login.
+    </div>
+     <?php
     }
     
     mysqli_select_db($con,'jobhub');
@@ -38,3 +41,4 @@
     
     
 ?> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
