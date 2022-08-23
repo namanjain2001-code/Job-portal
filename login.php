@@ -87,7 +87,7 @@
 
       <div class="form-floating">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="ilineRadio" value="company" required name="lgnType">
+          <input class="form-check-input" type="radio" id="inlineRadio" value="company" required name="lgnType">
           <label class="form-check-label" for="inlineRadio1">AS Company</label>
         </div>
         <div class="form-check form-check-inline">
@@ -113,34 +113,31 @@
         </label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="button" onclick="signin()" id="lgn-btn">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
     </form>
   </main>
   <script>
     function signin() {
-         
-         const req = new XMLHttpRequest();
-         
-         req.open("get","http://localhost/JOB-PORTAL/validation.php?lgntype="+document.querySelector('input[name="lgnType"]:checked').value+"&email="+document.getElementById('email').value+"&pass="+document.getElementById('pass').value,true);
-         req.send();
-         req.onreadystatechange = function() {
-           if(req.readyState==4 && req.status==200 )
-           {
-             if(req.responseText=="0")
-             {
-              document.getElementById('r').style.display='block';
-             }
-             else{
-              location.href = req.responseText;
-              
-             }
-             
-           }
-         }
+
+      const req = new XMLHttpRequest();
+
+      req.open("get", "http://localhost/JOB-PORTAL/validation.php?lgntype=" + document.querySelector('input[name="lgnType"]:checked').value + "&email=" + document.getElementById('email').value + "&pass=" + document.getElementById('pass').value, true);
+      req.send();
+      req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {
+          if (req.responseText == "0") {
+            document.getElementById('r').style.display = 'block';
+          } else {
+            location.href = req.responseText;
+
+          }
+
+        }
+      }
     }
-    function closebtn()
-    {
-      document.getElementById('r').style.display='none';
+
+    function closebtn() {
+      document.getElementById('r').style.display = 'none';
     }
   </script>
 
