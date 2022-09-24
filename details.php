@@ -1,6 +1,7 @@
 <?php
 session_start();
-$email = $_SESSION['email'];
+//$email = $_SESSION['email'];
+$email="google@abc.com";
 $con = mysqli_connect('localhost', 'root');
 mysqli_select_db($con, 'jobhub');
 $q = "select * from jobs where Cemail='$email'";

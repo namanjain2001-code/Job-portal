@@ -20,7 +20,7 @@ $num = mysqli_num_rows($result);
 $no = mysqli_num_rows($res);
 
 ?>
-<!doctype html>
+<!doctype html> 
 <html lang="en">
 
 <head>
