@@ -1,3 +1,12 @@
+<?php
+$id=$_GET['id'];
+$q="select * from jobs where id = $id ";
+$con= mysqli_connect("localhost","root");
+mysqli_select_db($con, 'jobhub');
+$res = mysqli_query($con,$q);
+
+$row = mysqli_fetch_array($res);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -55,51 +64,51 @@
 
     <div class="container">
         <h1>Edit Jobs Information</h1>
-        <form class="row g-3">
+        <form class="row g-3" method="POST" action="savechange.php?id=<?php echo($id) ;?>">
             <div class="col-md-6">
                 <label for="position" class="form-label">Position</label>
-                <input type="text" class="form-control" id="position" name="position">
+                <input type="text" class="form-control" value = "<?php echo($row['position']); ?>" id="position" name="position" >
             </div>
             <div class="col-md-6">
                 <label for="location" class="form-label">Location</label>
-                <input type="text" class="form-control" id="location" name="location">
+                <input type="text" class="form-control" value = "<?php echo($row['location']); ?>" id="location" name="location">
             </div>
             <div class="col-md-6">
                 <label for="responsibility" class="form-label">Responsibility</label>
-                <input type="text" class="form-control" id="responsibility" name="responsibility">
+                <input type="text" class="form-control" value = "<?php echo($row['responsibility']); ?>" id="responsibility" name="responsibility">
             </div>
             <div class="col-md-6">
                 <label for="skillRequired" class="form-label">skill required</label>
-                <input type="text" class="form-control" id="skillRequired" name="skillRequired">
+                <input type="text" class="form-control" value = "<?php echo($row['skill']); ?>" id="skillRequired" name="skill">
             </div>
             <div class="col-md-6">
                 <label for="workingHour" class="form-label">Working hours</label>
-                <input type="text" class="form-control" id="workingHour" name="workingHour">
+                <input type="text" class="form-control" value = "<?php echo($row['working_hours']); ?>" id="workingHour" name="working_hours">
             </div>
             <div class="col-md-3">
                 <label for="experienceReq" class="form-label">Experience Required</label>
-                <select id="experienceReq" class="form-select" name="experienceReq">
-                    <option value="None">No Expeience Required</option>
-                    <option value="Less than 3 Years">Less than 3 Years</option>
-                    <option value="4 - 8 Years">4 - 8 Years</option>
-                    <option value="More than 9 Years">More than 9 Years</option>
+                <select id="experienceReq" class="form-select" name="experience">
+                    <option <?php if($row['experience']=="No Expeience Required"){echo("selected");} ?> value="None">No Expeience Required</option>
+                    <option <?php if($row['experience']=="Less than 3 Years"){echo("selected");} ?> value="Less than 3 Years">Less than 3 Years</option>
+                    <option <?php if($row['experience']=="4 - 8 Years"){echo("selected");} ?> value="4 - 8 Years">4 - 8 Years</option>
+                    <option <?php if($row['experience']=="More than 9 Years"){echo("selected");} ?> value="More than 9 Years">More than 9 Years</option>
                 </select>
             </div>
             <div class="col-md-6">
                 <label for="vaccency" class="form-label">Vaccency</label>
-                <input type="number" class="form-control" id="vaccency" name="vaccency">
+                <input type="number" class="form-control" value = "<?php echo($row['vacancy']); ?>" id="vaccency" name="vacancy">
             </div>
             <div class="col-12">
                 <label for="ctc" class="form-label">Annual Pay</label>
-                <input type="number" class="form-control" id="ctc" placeholder="Per annum" name="ctc">
+                <input type="number" class="form-control" value = "<?php echo($row['annual_pay']); ?>" id="ctc" placeholder="Per annum" name="annual_pay">
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Discription</label>
-                <input type="textbox" class="form-control" id="dcrip" name="dcrip">
+                <input type="textbox" class="form-control" value = "<?php echo($row['discription']); ?>" id="dcrip" name="discription">
             </div>
             <div class="col-12">
-                <button type="button" class="btn btn-primary" onclick="postjob()">Save</button>
-                <button type="button" class="btn btn-outline-danger ">Delete</button>
+                <input type="submit" value = "Save Change" class="btn btn-primary" ></input>
+                <button type="reset" class="btn btn-outline-danger ">Delete</button>
             </div>
 
 

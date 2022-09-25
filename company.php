@@ -1,19 +1,19 @@
 <?php
 session_start();
 //$email = $_SESSION['email'];
-$email="google@abc.com";
+$email="jobhub@gmail.com";
 $con = mysqli_connect('localhost', 'root');
 mysqli_select_db($con, 'jobhub');
-$p = "select  jobs.position, jobapplication.status,jobapplication.applicationNum, candidate.firstName, candidate.lastName, candidate.middleName, candidate.email
+$p = "select  jobs.position, jobapplication.status,jobapplication.applicationNum, candidate.canName, candidate.canLink, candidate.Name
 from jobapplication
 inner join jobs ON jobapplication.Job_id=jobs.id
-inner join candidate ON jobapplication.Semail=candidate.email
+inner join candidate ON jobapplication.Semail=candidate.canEmail
 WHERE jobs.cemail = '$email'";
 $res = mysqli_query($con, $p);
 if (!$res) {
     echo mysqli_error($con);
 }
-$q = "select * from jobs where Cemail='$email'";
+$q = "select * from jobs where cemail='$email'";
 $result = mysqli_query($con, $q);
 $num = mysqli_num_rows($result);
 
@@ -187,7 +187,7 @@ if($numProfile!=0)
         <input type="textbox" class="form-control"   id="dcrip" name="discription">
       </div>
       <div class="col-12">
-        <input type="submit" class="btn btn-primary">Post job</input>
+        <input type="submit" class="btn btn-primary" value="Post Job"></input>
       </div>
 
 
@@ -204,6 +204,7 @@ if($numProfile!=0)
                     <th scope="col">Applied For</th>
                     <th scope="col">LinkedIn</th>
                     <th scope="col">Resume</th>
+                    <th scope="col">Status</th>
                     
                     
                 </tr>
@@ -215,9 +216,9 @@ if($numProfile!=0)
                     <tr>
                         <th scope="row"><?php echo $i; ?></th>
                         <td><a href="company-candidate-profile.php?candidateEmail=<?php echo($ro['email']);?>"><?php echo strtoupper($ro['firstName']) . " " . strtoupper($ro['middleName']) . " " . strtoupper($ro['lastName']); ?></a></td>
-                        <td><?php echo $ro['pos']; ?></td>
+                        <td><?php echo $ro['position']; ?></td>
+                        <td><?php echo $ro['canLink']; ?></td>
                         <td><?php echo "---"; ?></td>
-
                         <td>
                             <?php
                             if ($ro['status'] == 'NOT Accepted') {
@@ -259,10 +260,10 @@ if($numProfile!=0)
                     $row = mysqli_fetch_array($result); ?>
                     <tr>
                         <th scope="row"><?php echo $i; ?></th>
-                        <td><a href="edit.php?jobId=<?php echo($row['id']);?>"><?php echo $row['pos']; ?></a></td>
-                        <td><?php echo $row['skill']; ?></td>
-                        <td><?php echo $row['CTC']; ?></td>
-                        <td><?php echo $row['dcrip']; ?></td>
+                        <td><a href="edit.php?id=<?php echo($row['id']);?>"><?php echo $row['position']; ?></a></td>
+                        <td><?php echo $row['responsibility']; ?></td>
+                        <td><?php echo $row['annual_pay']; ?></td>
+                        <td><?php echo $row['discription']; ?></td>
                     </tr>
                     <tr>
                     <?php
